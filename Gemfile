@@ -9,9 +9,10 @@ end
 gem 'jquery-rails'
 gem "unicorn", ">= 4.3.1", :group => :production
 gem "mongoid", ">= 3.1.2"
-gem "slim", ">= 2.0.0.pre.6"
+gem "slim-rails", "~> 1.1.1"
 gem "devise", ">= 2.2.3"
 gem "figaro", ">= 0.6.3"
+gem "twitter-bootstrap-rails", "~> 2.2.6"
 
 group :development, :test do
   gem "thin", ">= 1.5.0"
@@ -21,8 +22,6 @@ end
 
 group :development do
   gem "haml2slim", ">= 0.4.6"
-  gem "haml-rails", ">= 0.4"
-  gem "html2haml", ">= 1.0.1"
   gem "guard-bundler", ">= 1.0.0"
   gem "guard-cucumber", ">= 1.4.0"
   gem "guard-rails", ">= 0.4.0"
