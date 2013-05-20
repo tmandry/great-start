@@ -41,6 +41,11 @@ RSpec.configure do |config|
   #     --seed 1234
   config.order = "random"
 
+  # Use DatabaseCleaner to handle test data. On JS specs (running on Selenium)
+  # transactional fixtures aren't supported, so we don't use them. On all
+  # other specs we do, because they're faster.
+  config.use_transactional_fixtures = false
+
   # Configure Warden to allow quick logins for feature specs.
   config.include Warden::Test::Helpers
   config.after(:each) { Warden.test_reset! }
@@ -48,11 +53,15 @@ RSpec.configure do |config|
   # Use Devise helpers for controller specs.
   config.include Devise::TestHelpers, :type => :controller
 
-  config.before(:suite) do
-    # This code will be run each time you run your specs.
-    DatabaseCleaner.clean_with :truncation
-  end
   config.before(:each) do
+    # If running a spec with JS, there will be multiple processes handling the
+    # database and so running the spec within a transaction is not supported.
+    # Otherwise, we use transactions because they're faster.
+    if example.metadata[:js]
+      DatabaseCleaner.strategy = :truncation
+    else
+      DatabaseCleaner.strategy = :transaction
+    end
     DatabaseCleaner.start
   end
   config.after(:each) do
