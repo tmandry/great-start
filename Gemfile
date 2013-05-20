@@ -23,7 +23,6 @@ end
 group :development do
   gem 'haml2slim', '>= 0.4.6'
   gem 'guard-bundler', '>= 1.0.0'
-  gem 'guard-cucumber', '>= 1.4.0'
   gem 'guard-rails', '>= 0.4.0'
   gem 'guard-rspec', '>= 2.5.2'
   gem 'rb-inotify', '>= 0.9.0', :require => false
@@ -38,7 +37,6 @@ group :test do
   gem 'database_cleaner', '>= 1.0.0.RC1'
   gem 'mongoid-rspec', '>= 1.7.0'
   gem 'email_spec', '>= 1.4.0'
-  gem 'cucumber-rails', '>= 1.3.1', :require => false
   gem 'launchy', '>= 2.2.0'
   gem 'capybara', '>= 2.0.3'
 end
