@@ -39,5 +39,7 @@ group :test do
   gem 'mongoid-rspec', '>= 1.7.0'
   gem 'email_spec', '>= 1.4.0'
   gem 'launchy', '>= 2.2.0'
-  gem 'capybara', '>= 2.0.3'
+  gem 'capybara', '~> 2.1.0'
+  gem 'poltergeist', '~> 1.3.0'
+  gem 'capybara-screenshot'
 end

@@ -15,6 +15,10 @@ Spork.prefork do
   require 'rspec/autorun'
   require 'email_spec'
   require 'warden'
+
+  require 'capybara/rspec'
+  require 'capybara-screenshot/rspec'
+  require 'capybara/poltergeist'
   require 'database_cleaner'
 
   # Requires supporting ruby files with custom matchers and macros, etc,
@@ -35,11 +39,6 @@ Spork.prefork do
     # Remove this line if you're not using ActiveRecord or ActiveRecord fixtures
     # config.fixture_path = "#{::Rails.root}/spec/fixtures"
 
-    # If you're not using ActiveRecord, or you'd prefer not to run each of your
-    # examples within a transaction, remove the following line or assign false
-    # instead of true.
-    # config.use_transactional_fixtures = true
-
     # If true, the base class of anonymous controllers will be inferred
     # automatically. This will be the default behavior in future versions of
     # rspec-rails.
@@ -51,6 +50,10 @@ Spork.prefork do
     #     --seed 1234
     config.order = "random"
 
+    # Configure Warden to allow quick logins for feature specs.
+    config.include Warden::Test::Helpers
+    config.after(:each) { Warden.test_reset! }
+
     config.before(:suite) do
       DatabaseCleaner.strategy = :truncation
     end
@@ -61,7 +64,16 @@ Spork.prefork do
       DatabaseCleaner.clean
     end
   end
+
+  # Preload some heavier modules that we depend on to speed up testing further.
+  require 'rspec/mocks'
+  require 'rspec/core/mocking/with_rspec'
+  require 'rspec/mocks/framework'
 end
+
+# Headless JS tests with Capybara.
+# Using :selenium is slower, but you get to watch the test in an actual browser.
+Capybara.javascript_driver = :poltergeist
 
 # Use a faster password encryption in specs.
 Devise.stretches = 1
