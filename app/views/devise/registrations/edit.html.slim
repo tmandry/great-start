@@ -12,7 +12,7 @@ h2
     = f.email_field :email
   div
     = f.label :password
-    i (leave blank if you don't want to change it)
+    i leave blank if you don't want to change it
     br/
     = f.password_field :password, :autocomplete => "off"
   div
@@ -21,7 +21,7 @@ h2
     = f.password_field :password_confirmation
   div
     = f.label :current_password
-    i (we need your current password to confirm your changes)
+    i we need your current password to confirm your changes
     br/
     = f.password_field :current_password
   div= f.submit "Update"
