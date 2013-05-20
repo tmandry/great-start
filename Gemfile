@@ -22,7 +22,6 @@ group :development, :test do
 end
 
 group :development do
-  gem 'haml2slim', '>= 0.4.6'
   gem 'guard-bundler', '>= 1.0.0'
   gem 'guard-rails', '>= 0.4.0'
   gem 'guard-rspec', '>= 2.5.2'

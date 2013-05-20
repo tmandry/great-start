@@ -97,12 +97,6 @@ GEM
       childprocess (>= 0.2.3)
       guard (>= 1.1)
       spork (>= 0.8.4)
-    haml (4.0.2)
-      tilt
-    haml2slim (0.4.6)
-      haml (>= 3.0)
-      nokogiri
-      ruby_parser
     hike (1.2.2)
     i18n (0.6.4)
     journey (1.0.4)
@@ -193,14 +187,11 @@ GEM
       rspec-core (~> 2.13.0)
       rspec-expectations (~> 2.13.0)
       rspec-mocks (~> 2.13.0)
-    ruby_parser (3.1.3)
-      sexp_processor (~> 4.1)
     sass (3.2.9)
     sass-rails (3.2.6)
       railties (~> 3.2.0)
       sass (>= 3.1.10)
       tilt (~> 1.3)
-    sexp_processor (4.2.1)
     slim (1.3.9)
       temple (~> 0.6.3)
       tilt (~> 1.3, >= 1.3.3)
@@ -263,7 +254,6 @@ DEPENDENCIES
   guard-rails (>= 0.4.0)
   guard-rspec (>= 2.5.2)
   guard-spork (~> 1.5.0)
-  haml2slim (>= 0.4.6)
   jquery-rails
   launchy (>= 2.2.0)
   mongoid (>= 3.1.2)
