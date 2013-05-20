@@ -18,6 +18,7 @@ group :development, :test do
   gem 'thin', '>= 1.5.0'
   gem 'rspec-rails', '>= 2.12.2'
   gem 'factory_girl_rails', '>= 4.2.0'
+  gem 'spork-rails', '~> 3.2.1'
 end
 
 group :development do
@@ -31,6 +32,7 @@ group :development do
   gem 'quiet_assets', '>= 1.0.2'
   gem 'better_errors', '>= 0.7.2'
   gem 'binding_of_caller', '>= 0.7.1', :platforms => [:mri_19, :rbx]
+  gem 'guard-spork', '~> 1.5.0'
 end
 
 group :test do
