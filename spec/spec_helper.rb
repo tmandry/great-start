@@ -54,6 +54,9 @@ Spork.prefork do
     config.include Warden::Test::Helpers
     config.after(:each) { Warden.test_reset! }
 
+    # Use Devise helpers for controller specs.
+    config.include Devise::TestHelpers, :type => :controller
+
     config.before(:suite) do
       DatabaseCleaner.strategy = :truncation
     end
