@@ -21,10 +21,6 @@ Spork.prefork do
   require 'capybara/poltergeist'
   require 'database_cleaner'
 
-  # Requires supporting ruby files with custom matchers and macros, etc,
-  # in spec/support/ and its subdirectories.
-  Dir[Rails.root.join("spec/support/**/*.rb")].each {|f| require f}
-
   RSpec.configure do |config|
     config.include(EmailSpec::Helpers)
     config.include(EmailSpec::Matchers)
@@ -86,4 +82,8 @@ Spork.each_run do
   FactoryGirl.reload
   DatabaseCleaner.clean_with :truncation
   Warden.test_mode!
+
+  # Requires supporting ruby files with custom matchers and macros, etc,
+  # in spec/support/ and its subdirectories.
+  Dir[Rails.root.join("spec/support/**/*.rb")].each {|f| require f}
 end
