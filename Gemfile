@@ -13,6 +13,7 @@ gem 'slim-rails', '~> 1.1.1'
 gem 'devise', '>= 2.2.3'
 gem 'figaro', '>= 0.6.3'
 gem 'twitter-bootstrap-rails', '~> 2.2.6'
+gem 'simple_form', '~> 2.1.0'
 
 group :development, :test do
   gem 'thin', '>= 1.5.0'
