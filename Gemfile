@@ -32,6 +32,8 @@ group :development do
   gem 'guard-bundler', '>= 1.0.0'
   gem 'guard-rails', '>= 0.4.0'
   gem 'guard-rspec', '>= 2.5.2'
+  gem 'guard-livereload', '~> 1.4.0'
+  gem 'rack-livereload', '~> 0.3.15'
   gem 'quiet_assets', '>= 1.0.2'
   gem 'better_errors', '>= 0.7.2'
   gem 'binding_of_caller', '>= 0.7.1', :platforms => [:mri_19, :rbx]
