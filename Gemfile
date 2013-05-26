@@ -5,6 +5,8 @@ group :assets do
   gem 'sass-rails',   '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'
   gem 'uglifier', '>= 1.0.3'
+  gem 'therubyracer', '~> 0.10.1'
+  gem 'less-rails', '~> 2.3.3'
 end
 gem 'jquery-rails'
 gem 'unicorn', '>= 4.3.1', :group => :production
@@ -12,7 +14,7 @@ gem 'mongoid', '>= 3.1.2'
 gem 'slim-rails', '~> 1.1.1'
 gem 'devise', '>= 2.2.3'
 gem 'figaro', '>= 0.6.3'
-gem 'twitter-bootstrap-rails', '~> 2.2.6'
+gem 'twitter-bootstrap-rails', '~> 2.2.6'  # kept outside :assets for helpers
 gem 'simple_form', '~> 2.1.0'
 
 group :development, :test do
