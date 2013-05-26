@@ -20,12 +20,12 @@ include these diagnostics:
 We’d also like to know if you’ve found combinations of recipes or
 preferences that do work together.
 
-Recipes:\
+Recipes:
 [“controllers”, “core”, “email”, “extras”, “frontend”, “gems”, “git”,
 “init”, “models”, “prelaunch”, “railsapps”, “readme”, “routes”, “saas”,
 “setup”, “testing”, “views”]
 
-Preferences:\
+Preferences:
 {:git=\>true, :railsapps=\>“rails3-mongoid-devise”,
 :database=\>“mongodb”, :orm=\>“mongoid”, :unit\_test=\>“rspec”,
 :integration=\>“cucumber”, :fixtures=\>“factory\_girl”,
