@@ -67,7 +67,17 @@ require 'rspec/mocks/framework'
 
 # Headless JS tests with Capybara.
 # Using :selenium is slower, but you get to watch the test in an actual browser.
+# Note that this will only run on specs that have :js => true.
+Capybara.register_driver :poltergeist_debug do |app|
+  # Supports remote inspection; see http://www.jonathanleighton.com/articles/2012/poltergeist-0-6-0/
+  Capybara::Poltergeist::Driver.new(app, :inspector => true)
+end
+Capybara.register_driver :selenium do |app|
+  Capybara::Selenium::Driver.new(app, :browser => :chrome)
+end
 Capybara.javascript_driver = :poltergeist
+# Capybara.javascript_driver = :poltergeist_debug
+# Capybara.javascript_driver = :selenium
 
 # Use a faster password encryption in specs.
 Devise.stretches = 1
