@@ -19,16 +19,6 @@ require 'database_cleaner'
 RSpec.configure do |config|
   config.include(EmailSpec::Helpers)
   config.include(EmailSpec::Matchers)
-  # ## Mock Framework
-  #
-  # If you prefer to use mocha, flexmock or RR, uncomment the appropriate line:
-  #
-  # config.mock_with :mocha
-  # config.mock_with :flexmock
-  # config.mock_with :rr
-
-  # Remove this line if you're not using ActiveRecord or ActiveRecord fixtures
-  # config.fixture_path = "#{::Rails.root}/spec/fixtures"
 
   # If true, the base class of anonymous controllers will be inferred
   # automatically. This will be the default behavior in future versions of
@@ -87,9 +77,6 @@ end
 Capybara.javascript_driver = :poltergeist
 # Capybara.javascript_driver = :poltergeist_debug
 # Capybara.javascript_driver = :selenium
-
-# Use a faster password encryption in specs.
-Devise.stretches = 1
 
 FactoryGirl.reload
 DatabaseCleaner.strategy = :truncation
