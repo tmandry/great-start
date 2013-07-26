@@ -9,13 +9,13 @@ group :assets do
 end
 gem 'jquery-rails'
 gem 'unicorn', '>= 4.3.1', :group => :production
-gem 'mongoid', '>= 3.1.2'
 gem 'slim-rails', '~> 1.1.1'
 gem 'devise', '>= 2.2.3'
 gem 'figaro', '>= 0.6.3'
 gem 'simple_form', '~> 2.1.0'
 
 group :development, :test do
+  gem 'sqlite3', '~> 1.3.7'
   gem 'thin', '>= 1.5.0'
   gem 'rspec-rails', '>= 2.12.2'
   gem 'factory_girl_rails', '>= 4.2.0'
@@ -42,7 +42,6 @@ end
 
 group :test do
   gem 'database_cleaner', '>= 1.0.0.RC1'
-  gem 'mongoid-rspec', '>= 1.7.0'
   gem 'email_spec', '>= 1.4.0'
   gem 'launchy', '>= 2.2.0'
   gem 'capybara', '~> 2.1.0'
